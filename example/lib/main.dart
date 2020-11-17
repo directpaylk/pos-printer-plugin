@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  String _printed='print failed';
 
   @override
   void initState() {
@@ -50,9 +51,40 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child:Column(children:[Text('Running on: $_platformVersion\n'),
+            Row(
+              children: <Widget>[
+                RaisedButton(
+                  child: Text("Print receipt"),
+                  onPressed: () {
+                    this._printReceipt();
+                  },
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text("Printed:"+_printed)
+              ],
+            ),
+          ] ),
         ),
       ),
     );
+  }
+  Future<String> _printReceipt() async {
+    print("printReceiptCalled");
+    try {
+      String printed = await PosPrinterPlugin.printReceipt("2020-11-17 18:37", "Test", "00000012", "SUCCESS","100.00");
+      setState(() {
+        this._printed = printed;
+      });
+    } on PlatformException catch (e) {
+      print(e);
+      setState(() {
+        this._printed = "print failed";
+      });
+    }
+
+    return _printed;
   }
 }

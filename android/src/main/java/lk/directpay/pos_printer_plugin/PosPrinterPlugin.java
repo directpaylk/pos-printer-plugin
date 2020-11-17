@@ -10,6 +10,7 @@ import com.pax.dal.IDAL;
 import com.pax.dal.IPrinter;
 import com.pax.neptunelite.api.NeptuneLiteUser;
 
+import io.flutter.Log;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -37,16 +38,20 @@ public class PosPrinterPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
+      Log.d("printReceipt","method"+call.method);
     if (call.method.equals("getPlatformVersion")) {
       result.success("Android " + android.os.Build.VERSION.RELEASE);
     } 
     if (call.method.equals("printReceipt")){
+        Log.d("printReceipt","method Called");
         String dateTime = call.argument("dateTime");
         String merchantName = call.argument("merchantName");
         String reference = call.argument("reference");
         String status = call.argument("status");
+        String amount=call.argument("amount");
 
-//        printSlip();
+      printSlip(dateTime,merchantName,reference,status,amount);
+      result.success("Success");
     }
     else {
       result.notImplemented();
@@ -58,13 +63,13 @@ public class PosPrinterPlugin implements FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(null);
   }
 
-  public void printSlip(final String body)
+  public void printSlip(final String dateTime, final String merchantName, final String reference, final String status, final String amount)
   {
       new Thread(new Runnable()
       {
           public void run()
           {
-              TesterPageComposing testerPageComposing = new TesterPageComposing(context, body);
+              TesterPageComposing testerPageComposing = new TesterPageComposing(context, dateTime,merchantName,reference,status,amount);
               testerPageComposing.run();
               Bitmap bitmap = testerPageComposing.getBitmap();
               try

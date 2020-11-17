@@ -18,15 +18,25 @@ public class TesterPageComposing extends ATester
     String body;
     private PaxGLPage iPaxGLPage;
     private Bitmap bitmap;
+    private String dateTime;
+    private String merchantName;
+    private String reference;
+    private String status;
+    private String amount;
 
     private static final int FONT_BIG = 28;
     private static final int FONT_NORMAL = 26;
     private static final int FONT_BIGEST = 35;
 
-    public TesterPageComposing(Context context, String body)
+    public TesterPageComposing(Context context, String dateTime,String merchantName, String reference,String status,String amount)
     {
         this.context = context;
         this.body = body;
+        this.dateTime=dateTime;
+        this.merchantName=merchantName;
+        this.reference=reference;
+        this.status=status;
+        this.amount=amount;
     }
 
     @Override
@@ -41,11 +51,15 @@ public class TesterPageComposing extends ATester
 
         page.addLine().addUnit(getImageFromAssetsFile("peoples_pay_logo.png"), EAlign.CENTER);
 
-        page.addLine().addUnit("REACH SLIP", FONT_BIGEST, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
-
-        page.addLine().addUnit("", FONT_NORMAL);
-
+//        page.addLine().addUnit("REACH SLIP", FONT_BIGEST, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
         page.addLine().addUnit("- - - - - - - - - - - - - - - - - - - - - - - - - - - -", FONT_NORMAL, EAlign.CENTER);
+        page.addLine().addUnit("", FONT_NORMAL);
+        page.addLine().addUnit("Date                            : " + dateTime, FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Transaction Status              : " + status, FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Paid To                         : " + merchantName, FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Amount                          : " + amount, FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Transaction ID                  : " + reference, FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
+
 
         //page.addLine().addUnit("Branch              : " + branch, FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
         page.addLine().addUnit(page.createUnit().setText(body).setAlign(EAlign.CENTER).setFontSize(FONT_BIG).setTextStyle(IUnit.TEXT_STYLE_NORMAL).setWeight(1.0f));
