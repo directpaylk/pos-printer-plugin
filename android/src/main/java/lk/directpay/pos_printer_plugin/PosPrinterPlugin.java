@@ -46,7 +46,7 @@ public class PosPrinterPlugin implements FlutterPlugin, MethodCallHandler {
         String reference = call.argument("reference");
         String status = call.argument("status");
 
-        printSlip();
+//        printSlip();
     }
     else {
       result.notImplemented();

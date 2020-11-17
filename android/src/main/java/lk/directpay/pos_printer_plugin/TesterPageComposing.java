@@ -39,7 +39,7 @@ public class TesterPageComposing extends ATester
         page.setTypefaceObj(Typeface.createFromAsset(context.getAssets(), "Arimo-Regular.ttf"));
         Log.d("Fonts", page.getTypefaceObj().toString());
 
-        page.addLine().addUnit(getImageFromAssetsFile("nsb.jpg"), EAlign.CENTER);
+        page.addLine().addUnit(getImageFromAssetsFile("peoples_pay_logo.png"), EAlign.CENTER);
 
         page.addLine().addUnit("REACH SLIP", FONT_BIGEST, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
 
