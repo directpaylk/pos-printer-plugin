@@ -11,4 +11,15 @@ class PosPrinterPlugin {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
+
+  static Future<bool> printReceipt(String dateTime, String merchantName, String reference, String status) async {
+    try {
+      final bool result = await _channel
+          .invokeMethod('printReceipt', {'dateTime': dateTime,'merchantName':merchantName,'reference':reference,'status':status});
+      return result;
+    } catch (e) {
+      print(e);
+    }
+    return false;
+  }
 }

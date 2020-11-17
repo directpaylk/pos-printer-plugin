@@ -1,3 +1,5 @@
+include ':NeptuneLiteApi_V3.04.00_20190322'
+include ':GLPage_V1.01.00_20171222'
 include ':app'
 
 def localPropertiesFile = new File(rootProject.projectDir, "local.properties")
