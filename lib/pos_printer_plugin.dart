@@ -24,4 +24,16 @@ class PosPrinterPlugin {
     }
     return "print failed";
   }
+  static Future<String> printSummaryReceipt(String dateTime, String merchantId, String counterId,String amount) async {
+    print("printReceiptCalled in main");
+    try {
+      final String result = await _channel
+          .invokeMethod('printSummary', {'amount':amount,'dateTime': dateTime,'merchantId':merchantId,'counterId':counterId});
+      print("printSummaryCalled in main result"+result);
+      return result;
+    } catch (e) {
+      print(e);
+    }
+    return "print failed";
+  }
 }

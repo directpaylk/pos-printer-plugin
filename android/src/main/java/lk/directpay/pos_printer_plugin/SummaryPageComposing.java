@@ -1,4 +1,5 @@
 package lk.directpay.pos_printer_plugin;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -6,39 +7,34 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.util.Log;
+
 import com.pax.gl.page.IPage;
-import com.pax.gl.page.IPage.EAlign;
-import com.pax.gl.page.IPage.ILine.IUnit;
 import com.pax.gl.page.PaxGLPage;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TesterPageComposing extends ATester
-{
+public class SummaryPageComposing extends ATester {
     Context context;
-    String body;
     private PaxGLPage iPaxGLPage;
     private Bitmap bitmap;
     private String dateTime;
-    private String merchantName;
-    private String reference;
-    private String status;
+    private String merchantId;
+    private String counterId;
     private String amount;
 
     private static final int FONT_BIG = 28;
     private static final int FONT_NORMAL = 26;
     private static final int FONT_BIGEST = 35;
 
-    public TesterPageComposing(Context context, String dateTime,String merchantName, String reference,String status,String amount)
+    public SummaryPageComposing(Context context, String dateTime,String merchantId, String counterId,String amount)
     {
         this.context = context;
-        this.body = body;
         this.dateTime=dateTime;
-        this.merchantName=merchantName;
-        this.reference=reference;
-        this.status=status;
+        this.merchantId=merchantId;
+        this.counterId=counterId;
         this.amount=amount;
     }
 
@@ -55,29 +51,25 @@ public class TesterPageComposing extends ATester
         page.setTypefaceObj(Typeface.createFromAsset(context.getAssets(), "Arimo-Regular.ttf"));
         Log.d("printReceipt", "Fonts"+page.getTypefaceObj().toString());
 
-        page.addLine().addUnit(getImageFromAssetsFile("peoples_logo.jpeg"), EAlign.CENTER);
+        page.addLine().addUnit(getImageFromAssetsFile("peoples_logo.jpeg"), IPage.EAlign.CENTER);
 
 //        page.addLine().addUnit("REACH SLIP", FONT_BIGEST, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit("- - - - - - - - - - - - - - - - - - - - - - - - - - - -", FONT_NORMAL, EAlign.CENTER);
+        page.addLine().addUnit("- - - - - - - - - - - - - - - - - - - - - - - - - - - -", FONT_NORMAL, IPage.EAlign.CENTER);
         page.addLine().addUnit("", FONT_NORMAL);
-        page.addLine().addUnit("Generated At", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( millisInString, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit("Transaction Date", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( dateTime, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit("Transaction Status", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( status, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit("Paid To", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( merchantName, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit("Amount", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( amount, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit("Transaction ID", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( reference, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
-
+        page.addLine().addUnit("Generated At", FONT_NORMAL, IPage.EAlign.LEFT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL).addUnit( dateTime, FONT_NORMAL, IPage.EAlign.RIGHT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Merchant ID", FONT_NORMAL, IPage.EAlign.LEFT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL).addUnit( merchantId, FONT_NORMAL, IPage.EAlign.RIGHT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Counter ID", FONT_NORMAL, IPage.EAlign.LEFT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL).addUnit( counterId, FONT_NORMAL, IPage.EAlign.RIGHT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Total Amount", FONT_NORMAL, IPage.EAlign.LEFT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL).addUnit( amount, FONT_NORMAL, IPage.EAlign.RIGHT, IPage.ILine.IUnit.TEXT_STYLE_NORMAL);
 
 
         //page.addLine().addUnit("Branch              : " + branch, FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit(page.createUnit().setText(body).setAlign(EAlign.CENTER).setFontSize(FONT_BIG).setTextStyle(IUnit.TEXT_STYLE_NORMAL).setWeight(1.0f));
 
-        page.addLine().addUnit("- - - - - - - - - - - - - - - - - - - - - - - - - - - -", FONT_NORMAL, EAlign.CENTER);
+        page.addLine().addUnit("- - - - - - - - - - - - - - - - - - - - - - - - - - - -", FONT_NORMAL, IPage.EAlign.CENTER);
         //page.addLine().addUnit("------------------------------------------------", FONT_NORMAL, EAlign.CENTER);
 
-        page.addLine().addUnit("Thank You For Your Payment", FONT_NORMAL, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Thank You For Your Payment", FONT_NORMAL, IPage.EAlign.CENTER, IPage.ILine.IUnit.TEXT_STYLE_NORMAL);
 
-        page.addLine().addUnit("\n\n", FONT_NORMAL, EAlign.CENTER);
+        page.addLine().addUnit("\n\n", FONT_NORMAL, IPage.EAlign.CENTER);
         Log.d("printReceipt", "bitmap "+page.getTypefaceObj().toString());
         int width = 520;
         Bitmap bitmap = iPaxGLPage.pageToBitmap(page, width);

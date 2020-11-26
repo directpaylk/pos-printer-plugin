@@ -23,13 +23,23 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 29
-
+//    sourceSets {
+//        main.java.srcDirs += 'src/main/jni'
+//    }
     defaultConfig {
         minSdkVersion 16
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "mips,'x86'"
+        }
+
+
     }
     lintOptions {
         disable 'InvalidPackage'
     }
+
+
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -38,6 +48,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation files('lib/NeptuneLiteApi_V3.04.00_20190322.jar')
-    implementation files('lib/GLPage_V1.01.00_20171222.jar')
+    implementation files('libs/NeptuneLiteApi_V3.04.00_20190322.jar')
+    implementation files('libs/GLPage_V1.01.00_20171222.jar')
 }

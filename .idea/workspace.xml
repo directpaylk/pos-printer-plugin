@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8d4e17bf-4b09-4317-bd84-c0a4cdf25b67" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/lib/GLPage_V1.01.00_20171222.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/libs/GLPage_V1.01.00_20171222.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/lib/NeptuneLiteApi_V3.04.00_20190322.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/libs/NeptuneLiteApi_V3.04.00_20190322.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/ATester.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/ATester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/PosPrinterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/PosPrinterPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/TesterPageComposing.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/TesterPageComposing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/GLPage_V1.01.00_20171222/GLPage_V1.01.00_20171222.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/NeptuneLiteApi_V3.04.00_20190322/NeptuneLiteApi_V3.04.00_20190322.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/app/src/main/java/lk/directpay/pos_printer_plugin_example/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/java/lk/directpay/pos_printer_plugin_example/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pos_printer_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pos_printer_plugin.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,11 +41,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\libs" />
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\assets" />
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\src\main\java\lk\directpay\pos_printer_plugin" />
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\lib" />
@@ -56,9 +69,17 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1605618619790">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1606130503516">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605618619790" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606130503516" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1605638821589">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605638821589" />
+    <state x="379" y="97" width="607" height="534" key="find.popup" timestamp="1605631850253">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="97" width="607" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1605631850253" />
   </component>
 </project>
