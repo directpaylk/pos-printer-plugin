@@ -51,7 +51,7 @@ public class SummaryPageComposing extends ATester {
         page.setTypefaceObj(Typeface.createFromAsset(context.getAssets(), "Arimo-Regular.ttf"));
         Log.d("printReceipt", "Fonts"+page.getTypefaceObj().toString());
 
-        page.addLine().addUnit(getImageFromAssetsFile("peoples_logo.jpeg"), IPage.EAlign.CENTER);
+        page.addLine().addUnit(getImageFromAssetsFile("peoples_bank_logo.jpg"), IPage.EAlign.CENTER);
 
 //        page.addLine().addUnit("REACH SLIP", FONT_BIGEST, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
         page.addLine().addUnit("- - - - - - - - - - - - - - - - - - - - - - - - - - - -", FONT_NORMAL, IPage.EAlign.CENTER);

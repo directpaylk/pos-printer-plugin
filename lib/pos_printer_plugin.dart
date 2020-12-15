@@ -12,11 +12,11 @@ class PosPrinterPlugin {
     return version;
   }
 
-  static Future<String> printReceipt(String dateTime, String merchantName, String reference, String status,String amount) async {
+  static Future<String> printReceipt(String dateTime, String merchantName, String tranId, String status,String amount,String reference,String qrReference) async {
     print("printReceiptCalled in main");
     try {
       final String result = await _channel
-          .invokeMethod('printReceipt', {'amount':amount,'dateTime': dateTime,'merchantName':merchantName,'reference':reference,'status':status});
+          .invokeMethod('printReceipt', {'amount':amount,'dateTime': dateTime,'merchantName':merchantName,'tranId':tranId,'status':status,'reference':reference,'qrReference':qrReference});
       print("printReceiptCalled in main result"+result);
       return result;
     } catch (e) {

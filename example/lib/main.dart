@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
   Future<String> _printReceipt() async {
     print("printReceiptCalled");
     try {
-      String printed = await PosPrinterPlugin.printReceipt("2020-11-17 18:37", "Test", "00000012", "SUCCESS","100.00");
+      String printed = await PosPrinterPlugin.printReceipt("2020-11-17 18:37", "Test", "012", "SUCCESS","100.00","R12444244455","12443444343");
       setState(() {
         this._printed = printed;
       });

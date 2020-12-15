@@ -23,23 +23,26 @@ public class TesterPageComposing extends ATester
     private Bitmap bitmap;
     private String dateTime;
     private String merchantName;
-    private String reference;
+    private String tranId;
     private String status;
     private String amount;
+    private String reference;
 
     private static final int FONT_BIG = 28;
     private static final int FONT_NORMAL = 26;
     private static final int FONT_BIGEST = 35;
 
-    public TesterPageComposing(Context context, String dateTime,String merchantName, String reference,String status,String amount)
+    public TesterPageComposing(Context context, String dateTime,String merchantName, String tranId,String status,String amount,String reference,String qrReference)
     {
         this.context = context;
         this.body = body;
         this.dateTime=dateTime;
         this.merchantName=merchantName;
-        this.reference=reference;
+        this.tranId=tranId;
         this.status=status;
         this.amount=amount;
+        this.reference=reference;
+        this,qrReference=qrReference;
     }
 
     @Override
@@ -55,7 +58,7 @@ public class TesterPageComposing extends ATester
         page.setTypefaceObj(Typeface.createFromAsset(context.getAssets(), "Arimo-Regular.ttf"));
         Log.d("printReceipt", "Fonts"+page.getTypefaceObj().toString());
 
-        page.addLine().addUnit(getImageFromAssetsFile("peoples_logo.jpeg"), EAlign.CENTER);
+        page.addLine().addUnit(getImageFromAssetsFile("peoples_bank_logo.jpg"), EAlign.CENTER);
 
 //        page.addLine().addUnit("REACH SLIP", FONT_BIGEST, EAlign.CENTER, IUnit.TEXT_STYLE_NORMAL);
         page.addLine().addUnit("- - - - - - - - - - - - - - - - - - - - - - - - - - - -", FONT_NORMAL, EAlign.CENTER);
@@ -65,7 +68,11 @@ public class TesterPageComposing extends ATester
         page.addLine().addUnit("Transaction Status", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( status, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
         page.addLine().addUnit("Paid To", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( merchantName, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
         page.addLine().addUnit("Amount", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( amount, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
-        page.addLine().addUnit("Transaction ID", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( reference, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Transaction ID", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( tranId, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("Reference Number", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit( reference, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
+        page.addLine().addUnit("QR Reference", FONT_NORMAL, EAlign.LEFT, IUnit.TEXT_STYLE_NORMAL).addUnit(qrReference, FONT_NORMAL, EAlign.RIGHT, IUnit.TEXT_STYLE_NORMAL);
+
+
 
 
 

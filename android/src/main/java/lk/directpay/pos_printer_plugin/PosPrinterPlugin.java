@@ -78,11 +78,13 @@ public class PosPrinterPlugin implements FlutterPlugin, MethodCallHandler {
         Log.d("printReceipt","method Called");
         String dateTime = call.argument("dateTime");
         String merchantName = call.argument("merchantName");
+        String tranId = call.argument("tranId");
         String reference = call.argument("reference");
         String status = call.argument("status");
         String amount=call.argument("amount");
+        String qrReference=call.argument("qrReference")
 
-      printSlip(dateTime,merchantName,reference,status,amount);
+      printSlip(dateTime,merchantName,tranId,status,amount,reference,qrReference);
       result.success("Success");
     }
       if (call.method.equals("printSummary")){
@@ -105,13 +107,14 @@ public class PosPrinterPlugin implements FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(null);
   }
 
-  public void printSlip(final String dateTime, final String merchantName, final String reference, final String status, final String amount)
+  public void printSlip(final String dateTime, final String merchantName, final String tranId, final String status, final String amount, final String reference,final
+                        Strint qrReference)
   {
       new Thread(new Runnable()
       {
           public void run()
           {
-              TesterPageComposing testerPageComposing = new TesterPageComposing(context, dateTime,merchantName,reference,status,amount);
+              TesterPageComposing testerPageComposing = new TesterPageComposing(context, dateTime,merchantName,tranId,status,amount,reference);
               testerPageComposing.run();
               Bitmap bitmap = testerPageComposing.getBitmap();
               try
