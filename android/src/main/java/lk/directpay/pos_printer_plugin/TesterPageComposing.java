@@ -42,7 +42,7 @@ public class TesterPageComposing extends ATester
         this.status=status;
         this.amount=amount;
         this.reference=reference;
-        this,qrReference=qrReference;
+        this.qrReference=qrReference;
     }
 
     @Override

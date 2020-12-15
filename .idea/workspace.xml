@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d4e17bf-4b09-4317-bd84-c0a4cdf25b67" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/assets/peoples_logo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/PosPrinterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/PosPrinterPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/SummaryPageComposing.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/SummaryPageComposing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/TesterPageComposing.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/TesterPageComposing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pos_printer_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pos_printer_plugin.dart" afterDir="false" />
-    </list>
+    <list default="true" id="8d4e17bf-4b09-4317-bd84-c0a4cdf25b67" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,15 +32,15 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\src\main\assets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\src\main\assets" />
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\libs" />
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\assets" />
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\src\main\java\lk\directpay\pos_printer_plugin" />
       <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\lib" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\FlutterWorkspace\pos-printer-plugin\android\src\main\assets" />
     </key>
   </component>
   <component name="SvnConfiguration">

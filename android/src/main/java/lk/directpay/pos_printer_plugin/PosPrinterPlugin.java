@@ -82,7 +82,7 @@ public class PosPrinterPlugin implements FlutterPlugin, MethodCallHandler {
         String reference = call.argument("reference");
         String status = call.argument("status");
         String amount=call.argument("amount");
-        String qrReference=call.argument("qrReference")
+        String qrReference=call.argument("qrReference");
 
       printSlip(dateTime,merchantName,tranId,status,amount,reference,qrReference);
       result.success("Success");
