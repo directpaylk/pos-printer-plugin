@@ -108,13 +108,13 @@ public class PosPrinterPlugin implements FlutterPlugin, MethodCallHandler {
   }
 
   public void printSlip(final String dateTime, final String merchantName, final String tranId, final String status, final String amount, final String reference,final
-                        Strint qrReference)
+  String qrReference)
   {
       new Thread(new Runnable()
       {
           public void run()
           {
-              TesterPageComposing testerPageComposing = new TesterPageComposing(context, dateTime,merchantName,tranId,status,amount,reference);
+              TesterPageComposing testerPageComposing = new TesterPageComposing(context, dateTime,merchantName,tranId,status,amount,reference,qrReference);
               testerPageComposing.run();
               Bitmap bitmap = testerPageComposing.getBitmap();
               try

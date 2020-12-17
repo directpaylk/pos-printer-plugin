@@ -27,6 +27,7 @@ public class TesterPageComposing extends ATester
     private String status;
     private String amount;
     private String reference;
+    private String qrReference;
 
     private static final int FONT_BIG = 28;
     private static final int FONT_NORMAL = 26;
@@ -56,7 +57,7 @@ public class TesterPageComposing extends ATester
 
         //page.setTypefaceObj(Typeface.createFromAsset(context.getAssets(), "Fangsong.ttf"));
         page.setTypefaceObj(Typeface.createFromAsset(context.getAssets(), "Arimo-Regular.ttf"));
-        Log.d("printReceipt", "Fonts"+page.getTypefaceObj().toString());
+        Log.d("printReceipt", "QR reference "+qrReference);
 
         page.addLine().addUnit(getImageFromAssetsFile("peoples_bank_logo.jpg"), EAlign.CENTER);
 

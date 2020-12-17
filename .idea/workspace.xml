@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d4e17bf-4b09-4317-bd84-c0a4cdf25b67" name="Default Changelist" comment="" />
+    <list default="true" id="8d4e17bf-4b09-4317-bd84-c0a4cdf25b67" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/PosPrinterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/PosPrinterPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/TesterPageComposing.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/lk/directpay/pos_printer_plugin/TesterPageComposing.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,5 +73,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="97" width="607" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1605631850253" />
+    <state width="343" height="69" key="javadoc.popup.new" timestamp="1608035310568">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="343" height="69" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1608035310568" />
   </component>
 </project>
